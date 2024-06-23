@@ -8,8 +8,8 @@
 
   outputs = inputs@{ flake-parts, ... }:
     let
-      prismaVersion = "5.7.0";
-      engineHash = "sha256-gZEz0UtgNwumsZbweAyx3TOVHJshpBigc9pzWN7Gb/A=`";
+      prismaVersion = "5.7.1";
+      engineHash = "sha256-EOYbWUgoc/9uUtuocfWDh0elExzL0+wb4PsihgMbsWs=";
       dashedPrismaVersion = builtins.replaceStrings ["."] ["_"] prismaVersion;
     in
     flake-parts.lib.mkFlake { inherit inputs; } {
