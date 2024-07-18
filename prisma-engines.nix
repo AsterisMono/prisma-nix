@@ -3,6 +3,7 @@
 , engineHash
 , fetchFromGitHub
 , lib
+, Security
 , openssl
 , git
 , pkg-config
@@ -40,7 +41,7 @@ rustPlatform.buildRustPackage rec {
   buildInputs = [
     openssl
     protobuf
-  ] ++ lib.optionals stdenv.isDarwin [ stdenv.cc.lib.Security ];
+  ] ++ lib.optionals stdenv.isDarwin [ Security ];
 
   preBuild = ''
     export OPENSSL_DIR=${lib.getDev openssl}
