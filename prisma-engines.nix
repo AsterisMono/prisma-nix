@@ -3,13 +3,13 @@
 , engineHash
 , fetchFromGitHub
 , lib
-, Security
 , openssl
 , git
 , pkg-config
 , protobuf
 , rustPlatform
 , stdenv
+, darwin
 }:
 
 # Contains modified code from nixpkgs. Shout out to the maintainers!
@@ -41,7 +41,7 @@ rustPlatform.buildRustPackage rec {
   buildInputs = [
     openssl
     protobuf
-  ] ++ lib.optionals stdenv.isDarwin [ Security ];
+  ] ++ lib.optionals stdenv.isDarwin [ darwin.apple_sdk.frameworks.Security ];
 
   preBuild = ''
     export OPENSSL_DIR=${lib.getDev openssl}

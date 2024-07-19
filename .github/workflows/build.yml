@@ -4,7 +4,7 @@ on:
   push:
 jobs:
   build-engine:
-    name: Build prisma-engines 5.7.1
+    name: Build prisma-engines
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -15,4 +15,4 @@ jobs:
       with:
         name: asterismono
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-    - run: nix build .#prisma-engines_5_7_1
+    - run: nix build .#prisma-engines
