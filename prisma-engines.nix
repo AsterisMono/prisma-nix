@@ -1,5 +1,4 @@
-{ 
-  prismaVersion
+{ prismaVersion
 , engineHash
 , fetchFromGitHub
 , lib
@@ -55,10 +54,14 @@ rustPlatform.buildRustPackage rec {
   '';
 
   cargoBuildFlags = [
-    "-p" "query-engine"
-    "-p" "query-engine-node-api"
-    "-p" "schema-engine-cli"
-    "-p" "prisma-fmt"
+    "-p"
+    "query-engine"
+    "-p"
+    "query-engine-node-api"
+    "-p"
+    "schema-engine-cli"
+    "-p"
+    "prisma-fmt"
   ];
 
   postInstall = ''
